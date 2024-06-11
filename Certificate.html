@@ -1,0 +1,59 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Background</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CLEMENT WEBSITE</h1>
+        <section id="hero">
+            <h2>Welcome to My Portfolio</h2>
+            <p>I am a JN SOFTWARE ENGINEER. Check out my work below!</p>
+            <a href="#projects" class="cta">View Certifications</a>
+        </section>
+    </header>
+</br>
+    <div class="certificate-container">
+        <img src="clemo.jpg" class="certificate" alt="Certificate 1">
+        <img src="clemo.jpg" class="certificate" alt="Certificate 2">
+        <img src="clemo.jpg" class="certificate" alt="Certificate 1">
+        <img src="clemo.jpg" class="certificate" alt="Certificate 2">
+    </br>
+    <img src="clemo.jpg" class="certificate" alt="Certificate 1">
+    <img src="clemo.jpg" class="certificate" alt="Certificate 2">
+        <!-- Add more certificates as needed -->
+    </div>
+
+    <script>
+        const certificates = document.querySelectorAll('.certificate');
+        let currentIndex = 0;
+
+        function showCertificate(index) {
+            certificates.forEach((certificate, i) => {
+                certificate.classList.remove('show');
+                if (i === index) {
+                    certificate.classList.add('show'); 
+                }
+            });
+        }
+
+        function nextCertificate() {
+            currentIndex = (currentIndex + 1) % certificates.length;
+            showCertificate(currentIndex);
+        }
+
+        setInterval(nextCertificate, 300); // Change image every 3 seconds
+
+        // Initially show the first certificate
+        showCertificate(currentIndex);
+    </script>
+     <button class="back-button" onclick="goToIndex()">Back to Home</button>
+     <script src="script.js"></script>
+</body>
+</html>
