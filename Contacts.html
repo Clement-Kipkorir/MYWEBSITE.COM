@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CONTACTS DETAILS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0f7fa;
+            background-image: url(backg.jpg);
+            background-repeat: repeat;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 350px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact-card h2 {
+            background-color: #009688;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .contact-detail {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        .contact-detail:last-child {
+            border-bottom: none;
+        }
+
+        .contact-detail h3 {
+            margin: 0 0 10px;
+            color: #00796b;
+            font-size: 20px;
+        }
+
+        .contact-detail p {
+            margin: 0;
+            color: #616161;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-button {
+            background-color: #009688;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .back-button:hover {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-card">
+            <h2>C CLEMENT</h2>
+            <div class="contact-detail" id="phone">
+                <h3>Phone</h3>
+                <p>+254715758620</p>
+            </div>
+            <div class="contact-detail" id="email">
+                <h3>Email</h3>
+                <p>clemokipkorir@gmail.com</p>
+            </div>
+            <div class="contact-detail" id="location">
+                <h3>Location</h3>
+                <p>P.O BOX 50420, 00100 NAIROBI NYAYO ESTATE, AVIATION COLLAGE RD</p>
+            </div>
+            <div class="contact-detail" id="directions">
+                <h3>CLEMENT KIPKORIR</h3>
+                <p>WEBSITE OWNER</p>
+            </div>
+        </div>
+    </div>
+    <button class="back-button" onclick="goToIndex()">Back to Home</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const details = document.querySelectorAll('.contact-detail');
+            details.forEach((detail, index) => {
+                detail.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
+
+        function goToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
